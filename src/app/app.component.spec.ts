@@ -26,16 +26,14 @@ describe('AppComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should render embed pdf', () => {
+  it('should render iframe pdf', () => {
     // Arrange
     const expectedSrc = 'aaron-yang-software-engineer-resume-en.pdf';
-    const expectedType = 'application/pdf';
 
     // Act
     fixture.detectChanges();
 
     // Assert
-    expect(element.querySelector('embed')?.src).toContain(expectedSrc);
-    expect(element.querySelector('embed')?.type).toBe(expectedType);
+    expect(element.querySelector('iframe')?.src).toContain(expectedSrc);
   });
 });
