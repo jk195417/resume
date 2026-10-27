@@ -9,7 +9,8 @@
     "test": "ng test",
     "test:ci": "ng test --watch=false --browsers=ChromeHeadless",
     "serve:ssr:resume": "node dist/resume/server/server.mjs",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "build:pdf": "node pdf-source/build-pdf.mjs \"$PWD/pdf-source/resume-en.html\" public/aaron-yang-software-engineer-resume-en.pdf /tmp/resume-preview.png"
   },
   "private": true,
   "dependencies": {
@@ -44,6 +45,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "playwright": "^1.56.0",
     "typescript": "~5.4.2",
     "typescript-eslint": "8.0.0-alpha.20"
   }
