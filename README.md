@@ -1,5 +1,17 @@
 # Resume
 
+Serves the PDF resume at <https://resume.yang-hong-xin.com>.
+
+The online versions live on Notion ([English](https://yang-hong-xin.notion.site/Resume-b8b910439158413a81868e1a39c27310) / [中文](https://yang-hong-xin.notion.site/926f9aff8ffd4166a8e1ed5d37f6cd89)), and all other links are on <https://yang-hong-xin.com>.
+
+## Updating the PDF
+
+The PDF is rendered from [`pdf-source/resume-en.html`](./pdf-source/resume-en.html). After editing it, regenerate the PDF with Playwright:
+
+```bash
+node pdf-source/build-pdf.mjs "$PWD/pdf-source/resume-en.html" public/aaron-yang-software-engineer-resume-en.pdf /tmp/resume-preview.png
+```
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.6.
 
 ## Development server

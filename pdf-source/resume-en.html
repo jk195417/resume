@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Aaron Yang - Resume</title>
+  <!-- Source of public/aaron-yang-software-engineer-resume-en.pdf. Content mirrors the Notion resume. -->
+  <style>
+    @page {
+      size: A4;
+      margin: 14mm 15mm;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Noto Sans', 'Helvetica Neue', Arial, sans-serif;
+      font-size: 9.4pt;
+      line-height: 1.45;
+      color: #1f2328;
+    }
+
+    a {
+      color: #1f5fbf;
+      text-decoration: none;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      border-bottom: 2px solid #1f2328;
+      padding-bottom: 6px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 22pt;
+      letter-spacing: 0.02em;
+    }
+
+    .role {
+      margin: 2px 0 0;
+      font-size: 11pt;
+      color: #444c56;
+    }
+
+    .contact {
+      text-align: right;
+      font-size: 8.6pt;
+      line-height: 1.55;
+    }
+
+    h2, h3, .job {
+      break-after: avoid;
+    }
+
+    li, p {
+      break-inside: avoid;
+    }
+
+    h2 {
+      margin: 14px 0 6px;
+      font-size: 10.5pt;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #1f5fbf;
+      border-bottom: 1px solid #d0d7de;
+      padding-bottom: 2px;
+    }
+
+    h3 {
+      margin: 8px 0 2px;
+      font-size: 9.6pt;
+    }
+
+    h3 .note {
+      font-weight: normal;
+      color: #59636e;
+    }
+
+    .job {
+      display: flex;
+      justify-content: space-between;
+      font-weight: bold;
+      font-size: 10.2pt;
+      margin-top: 8px;
+    }
+
+    .job .when {
+      font-weight: normal;
+      color: #59636e;
+    }
+
+    .titles {
+      margin: 1px 0 2px;
+      color: #59636e;
+      font-size: 8.6pt;
+    }
+
+    p {
+      margin: 0 0 3px;
+    }
+
+    ul {
+      margin: 1px 0 0;
+      padding-left: 15px;
+    }
+
+    li {
+      margin-bottom: 1.5px;
+    }
+
+    .skills li {
+      list-style: none;
+      margin-left: -15px;
+    }
+
+    .two {
+      display: flex;
+      gap: 24px;
+    }
+
+    .two>div:first-child {
+      flex: 1.4;
+    }
+
+    .two>div {
+      flex: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div>
+      <h1>Aaron Yang</h1>
+      <p class="role">Staff AI Engineer at Micron · Architect</p>
+    </div>
+    <div class="contact">
+      Taichung, Taiwan · <a href="mailto:yang.hong.xin.tw@gmail.com">yang.hong.xin.tw@gmail.com</a><br>
+      <a href="https://yang-hong-xin.com">yang-hong-xin.com</a> ·
+      <a href="https://www.linkedin.com/in/hongxin-yang/">linkedin.com/in/hongxin-yang</a> ·
+      <a href="https://github.com/jk195417">github.com/jk195417</a><br>
+      Online version: <a href="https://yang-hong-xin.notion.site/Resume-b8b910439158413a81868e1a39c27310">Notion resume</a>
+    </div>
+  </header>
+
+  <h2>Summary</h2>
+  <p>Staff AI Engineer at Micron with 7 years of experience building and running a workflow and change management system used by 3,000+ people every day across 7 regions. Well-versed in .NET Core, Angular, and CI/CD, with hands-on experience moving systems to Kubernetes and Azure. Currently the architect of a 20-person team; enjoys knowledge sharing and training, and cares deeply about code quality and developer experience.</p>
+
+  <h2>Work experience</h2>
+  <div class="job"><span>Micron, Taichung, Taiwan</span><span class="when">2019-11 – Present</span></div>
+  <p class="titles">Staff AI Engineer (2026-10 –) · Staff Software Engineer (2025-10 – 2026-10) · Senior Software Engineer (2023-10 – 2025-10) · Software Engineer (2019-11 – 2023-10)</p>
+
+  <h3>Core system <span class="note">— 3,000+ daily users across 7 regions</span></h3>
+  <ul>
+    <li>Built and maintained an internal workflow and change management system serving 3,000+ daily active users across 7 regions, integrated with manufacturing systems so changes are validated against business plans, approved, and applied back automatically.</li>
+    <li>Improved system performance by nearly 1,000x by fixing weak spots such as database N+1 queries; sped up page loads with pagination and lazy loading.</li>
+  </ul>
+
+  <h3>Team leadership <span class="note">— Architect of a 20-person team</span></h3>
+  <ul>
+    <li>Serve as the architect of a 20-person team; provide architecture designs, consulting, and tech stack comparisons for internal and external teams.</li>
+    <li>Previously led a project with 4 developers: hosted Scrum meetings, code reviews, and pair programming; interviewed users and documented processes in Confluence, Jira, SharePoint, and Teams.</li>
+  </ul>
+
+  <h3>Architecture and cloud <span class="note">— From on-premises to Kubernetes and Azure</span></h3>
+  <ul>
+    <li>Migrated services from Windows Server IIS to Kubernetes with Jenkins, Octopus, Docker, and Helm, and adopted Azure AD, Key Vault, Service Bus, Blob Storage, Cache for Redis, and Application Insights.</li>
+    <li>Built a job queue service and a three-layer cache (HTTP request, in-memory, distributed) using the decorator pattern to control strategy and TTL.</li>
+    <li>Improved observability with health checks, Application Insights, and Kubernetes probes, and centralized all logging.</li>
+  </ul>
+
+  <h3>Performance <span class="note">— CPU 100% → under 10%, ETL 7 hours → 1 minute</span></h3>
+  <ul>
+    <li>Moved 1 TB of base64-encoded files from the database to storage, cutting host CPU from 100% to under 10% and RAM from 64 GB to 8 GB.</li>
+    <li>Rewrote ETL jobs, reducing the daily Snowflake upload from 7 hours to 1 minute.</li>
+  </ul>
+
+  <h3>Quality and operations <span class="note">— On-call 60+ hours → under 5 hours a week</span></h3>
+  <ul>
+    <li>Introduced unit testing (Jest, xUnit), linters, and formatters enforced by git hooks and CI, and built a testing culture in the team.</li>
+    <li>Cut on-call effort from 60+ to under 5 hours a week by grouping incidents by cause, prioritizing by time wasted, and fixing root causes.</li>
+  </ul>
+
+  <div class="job"><span>5xRuby, Taipei, Taiwan — Full Stack Engineer (Contract)</span><span class="when">2017-08 – 2017-11</span></div>
+  <ul>
+    <li>Shipped new features for dappei.com with two senior engineers and a PM in 3 months, including Instagram and Facebook OAuth login and scheduled posting through their APIs.</li>
+  </ul>
+
+  <h2 style="break-before: page">Selected projects</h2>
+  <ul>
+    <li><b><a href="https://github.com/danmu-classroom/danmu-classroom">Danmu Classroom</a></b> (2018, rewritten 2026): audience messages from phone or LINE fly across the speaker's screen; Cloudflare Workers, Durable Objects over WebSocket, and an Electron overlay.</li>
+    <li><b><a href="https://github.com/jk195417/bisection-anything">Bisection Anything</a></b> (2026): rank anything by pairwise comparison, with single elimination or a full ranking.</li>
+    <li><b>Master's thesis: Dcard post analyzer</b> (2017 – 2019): crawler plus sentiment analysis, BERT, and a mention graph to help experts judge conversation health. <a href="https://hdl.handle.net/11296/gazcm2">Thesis</a></li>
+    <li><b><a href="https://github.com/jk195417/chinese-segmentation-as-service">Chinese Segmentation as Service</a></b> (2019): jieba, SnowNLP, and pkuseg Chinese word segmentation served as an HTTP API with Flask.</li>
+    <li><b><a href="https://github.com/CatenChurch/caten-church">Caten Church website</a></b> (2016 – 2019): Rails app for member accounts, event sign-ups, attendance reports, and permission management.</li>
+  </ul>
+
+  <h2>Skills</h2>
+  <ul class="skills">
+    <li><b>Backend</b>: C#, .NET Core, Entity Framework Core, Ruby on Rails, Python, Flask, Node.js, RESTful APIs, message queues</li>
+    <li><b>Frontend</b>: TypeScript, Angular, RxJS, Vue, Bootstrap, Sass, Electron</li>
+    <li><b>Testing and quality</b>: xUnit, Moq, AutoFixture, FluentAssertions, Jest, ESLint, Prettier, SonarLint, dotnet format</li>
+    <li><b>DevOps and cloud</b>: Jenkins, Octopus, Docker, Helm, Kubernetes, OpenShift, Azure (AKS, Key Vault, Service Bus, Blob Storage, Redis, Application Insights), Cloudflare Workers</li>
+    <li><b>Data</b>: MSSQL, PostgreSQL, MySQL, MongoDB, Redis, RabbitMQ, Snowflake</li>
+  </ul>
+
+  <div class="two">
+    <div>
+      <h2>Education</h2>
+      <p><b>M.S. Information Management</b>, National Sun Yat-sen University (2017 – 2019), GPA 3.8 / 4.3<br>Researched conversation health on social networks with text mining and NLP.</p>
+      <p><b>B.E. Automatic Control</b>, Feng Chia University (2013 – 2017), GPA 3.6 / 4.0<br>Completed a second program in Computer Science.</p>
+    </div>
+    <div>
+      <h2>Languages</h2>
+      <p>Mandarin Chinese: Native</p>
+      <p>English: Professional working proficiency (TOEIC 750/990)</p>
+    </div>
+  </div>
+</body>
+
+</html>
