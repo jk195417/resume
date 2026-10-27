@@ -6,10 +6,12 @@ The online versions live on Notion ([English](https://yang-hong-xin.notion.site/
 
 ## Updating the PDF
 
-The PDF is rendered from [`pdf-source/resume-en.html`](./pdf-source/resume-en.html). After editing it, regenerate the PDF with Playwright:
+The PDF is rendered from [`pdf-source/resume-en.html`](./pdf-source/resume-en.html). CI regenerates it on every push, so editing the HTML and merging to `main` is enough.
+
+To preview it locally:
 
 ```bash
-node pdf-source/build-pdf.mjs "$PWD/pdf-source/resume-en.html" public/aaron-yang-software-engineer-resume-en.pdf /tmp/resume-preview.png
+npm run build:pdf
 ```
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.6.
