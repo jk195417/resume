@@ -134,7 +134,7 @@
   <header>
     <div>
       <h1>Aaron Yang</h1>
-      <p class="role">Staff AI Engineer at Micron · Architect</p>
+      <p class="role">Staff AI Engineer at Micron</p>
     </div>
     <div class="contact">
       Taichung, Taiwan · <a href="mailto:yang.hong.xin.tw@gmail.com">yang.hong.xin.tw@gmail.com</a><br>
@@ -146,41 +146,43 @@
   </header>
 
   <h2>Summary</h2>
-  <p>Staff AI Engineer at Micron with 7 years of experience building and running a workflow and change management system used by 3,000+ people every day across 7 regions. Well-versed in .NET Core, Angular, and CI/CD, with hands-on experience moving systems to Kubernetes and Azure. Currently the architect of a 20-person team; enjoys knowledge sharing and training, and cares deeply about code quality and developer experience.</p>
+  <p>Staff AI Engineer at Micron with 7 years of experience building and running a workflow and change management platform used by thousands of people every day across Micron's global fab, assembly and test sites. Design authority in an engineering org of about 20, well-versed in .NET Core, Angular, CI/CD, Kubernetes and Azure. Cares deeply about code quality, observability and developer experience, and lately brings AI into everyday engineering: AI code review backed by evals, agent-written tests and MCP servers.</p>
 
   <h2>Work experience</h2>
   <div class="job"><span>Micron, Taichung, Taiwan</span><span class="when">2019-11 – Present</span></div>
   <p class="titles">Staff AI Engineer (2026-10 –) · Staff Software Engineer (2025-10 – 2026-10) · Senior Software Engineer (2023-10 – 2025-10) · Software Engineer (2019-11 – 2023-10)</p>
 
-  <h3>Core system <span class="note">— 3,000+ daily users across 7 regions</span></h3>
+  <h3>Core platform <span class="note">— used by thousands of people every day across global fab, assembly and test sites</span></h3>
   <ul>
-    <li>Built and maintained an internal workflow and change management system serving 3,000+ daily active users across 7 regions, integrated with manufacturing systems so changes are validated against business plans, approved, and applied back automatically.</li>
-    <li>Improved system performance by nearly 1,000x by fixing weak spots such as database N+1 queries; sped up page loads with pagination and lazy loading.</li>
+    <li>Built and run an internal workflow and change management platform integrated with manufacturing systems, so changes are validated against business plans, approved, and applied back automatically; brought four new manufacturing facilities onto it.</li>
   </ul>
 
-  <h3>Team leadership <span class="note">— Architect of a 20-person team</span></h3>
+  <h3>Technical leadership <span class="note">— design authority in an engineering org of about 20</span></h3>
   <ul>
-    <li>Serve as the architect of a 20-person team; provide architecture designs, consulting, and tech stack comparisons for internal and external teams.</li>
-    <li>Previously led a project with 4 developers: hosted Scrum meetings, code reviews, and pair programming; interviewed users and documented processes in Confluence, Jira, SharePoint, and Teams.</li>
+    <li>Design authority for the team's largest programs: led requirement workshops that turned business processes into IT requirements, then broke them into developer-ready work.</li>
+    <li>Technical lead for a manufacturing setup automation program (about 94% less setup time); took over a stalled cross-team conversion program, redesigned it and handed delivery to another team (first wave live in 2026).</li>
+    <li>Stood up a standalone instance for a fab divestiture and handed it over on the sale's schedule; the team was named IT Culture Champions (2021).</li>
   </ul>
 
-  <h3>Architecture and cloud <span class="note">— From on-premises to Kubernetes and Azure</span></h3>
+  <h3>Performance and cost <span class="note">— slowest operations from minutes to seconds</span></h3>
   <ul>
-    <li>Migrated services from Windows Server IIS to Kubernetes with Jenkins, Octopus, Docker, and Helm, and adopted Azure AD, Key Vault, Service Bus, Blob Storage, Cache for Redis, and Application Insights.</li>
-    <li>Built a job queue service and a three-layer cache (HTTP request, in-memory, distributed) using the decorator pattern to control strategy and TTL.</li>
-    <li>Improved observability with health checks, Application Insights, and Kubernetes probes, and centralized all logging.</li>
+    <li>Removed N+1 and per-record database access in two phases — batched operations across the services, then bulk-write support in the shared platform library — taking the slowest operations from minutes to seconds (over 100x).</li>
+    <li>Designed the move of inline images out of the database into object storage: database size down about 99%, database CPU from saturated to under 10%, memory per database server down 75%, weekly API outages to zero.</li>
+    <li>Rebuilt the data-warehouse export as incremental jobs (data freshness from about 12 hours to about 5 minutes), and cut a cloud monitoring bill by about 87% by removing duplicated telemetry.</li>
   </ul>
 
-  <h3>Performance <span class="note">— CPU 100% → under 10%, ETL 7 hours → 1 minute</span></h3>
+  <h3>Cloud and reliability <span class="note">— on-call from 60+ to under 5 hours a week</span></h3>
   <ul>
-    <li>Moved 1 TB of base64-encoded files from the database to storage, cutting host CPU from 100% to under 10% and RAM from 64 GB to 8 GB.</li>
-    <li>Rewrote ETL jobs, reducing the daily Snowflake upload from 7 hours to 1 minute.</li>
+    <li>Migrated services from Windows Server IIS to Kubernetes with Jenkins, Octopus, Docker and Helm, and adopted Azure AD, Key Vault, Service Bus, Blob Storage, Cache for Redis and Application Insights.</li>
+    <li>Replaced manual server and VM restarts with Kubernetes health checks, liveness probes, autoscaling and global load balancing: manual API restarts fell from 20+ a week to zero, and on-call effort from 60+ to under 5 hours a week.</li>
+    <li>Built the platform's observability over six years: centralized logging, browser-to-database distributed tracing (W3C trace context), per-query database timing and alert rules, used to catch recurring faults before users report them.</li>
   </ul>
 
-  <h3>Quality and operations <span class="note">— On-call 60+ hours → under 5 hours a week</span></h3>
+  <h3>Developer experience and AI-assisted development <span class="note">— test coverage from about 40% to 85%</span></h3>
   <ul>
-    <li>Introduced unit testing (Jest, xUnit), linters, and formatters enforced by git hooks and CI, and built a testing culture in the team.</li>
-    <li>Cut on-call effort from 60+ to under 5 hours a week by grouping incidents by cause, prioritizing by time wasted, and fixing root causes.</li>
+    <li>Migrated the team's repositories and CI to GitHub and GitHub Actions, which unlocked GitHub Copilot, and cut CI feedback time by about 40%.</li>
+    <li>Turned the team's code-review judgement into repository rules for AI code review, A/B-tested with evals; raised test coverage from about 40% to 85% with agent-written tests under team rules; set up MCP servers and team Copilot skills.</li>
+    <li>Talk: “Less is More — Designing Agent Context Files from Paper to Production” (2026).</li>
   </ul>
 
   <div class="job"><span>5xRuby, Taipei, Taiwan — Full Stack Engineer (Contract)</span><span class="when">2017-08 – 2017-11</span></div>
@@ -188,7 +190,7 @@
     <li>Shipped new features for dappei.com with two senior engineers and a PM in 3 months, including Instagram and Facebook OAuth login and scheduled posting through their APIs.</li>
   </ul>
 
-  <h2 style="break-before: page">Selected projects</h2>
+  <h2>Selected projects</h2>
   <ul>
     <li><b><a href="https://github.com/danmu-classroom/danmu-classroom">Danmu Classroom</a></b> (2018, rewritten 2026): audience messages from phone or LINE fly across the speaker's screen; Cloudflare Workers, Durable Objects over WebSocket, and an Electron overlay.</li>
     <li><b><a href="https://github.com/jk195417/bisection-anything">Bisection Anything</a></b> (2026): rank anything by pairwise comparison, with single elimination or a full ranking.</li>
@@ -204,6 +206,7 @@
     <li><b>Testing and quality</b>: xUnit, Moq, AutoFixture, FluentAssertions, Jest, ESLint, Prettier, SonarLint, dotnet format</li>
     <li><b>DevOps and cloud</b>: Jenkins, Octopus, Docker, Helm, Kubernetes, OpenShift, Azure (AKS, Key Vault, Service Bus, Blob Storage, Redis, Application Insights), Cloudflare Workers</li>
     <li><b>Data</b>: MSSQL, PostgreSQL, MySQL, MongoDB, Redis, RabbitMQ, Snowflake</li>
+    <li><b>AI-assisted development</b>: GitHub Copilot, AI code review rules, evals, agent context files, MCP servers</li>
   </ul>
 
   <div class="two">
